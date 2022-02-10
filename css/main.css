@@ -5,6 +5,7 @@ body {
 	font-weight: 400;
 	line-height: 1.4;
 	font-family: 'Nanum Gothic', sans-serif;
+	height: 3000px;
 }
 
 img {
@@ -15,17 +16,22 @@ a{
 	text-decoration: none;
 }
 
-/* HEADER */
-header {
-	background-color: #f6f5f0;
-	border-bottom: 1px solid #c8c8c8;
-}
-
-header .inner {
+.inner{
 	width: 1100px;
-	height: 120px;
 	margin: 0 auto;
 	position: relative;
+}
+
+/* HEADER */
+header {
+	position: fixed;
+	background-color: #f6f5f0;
+	border-bottom: 1px solid #c8c8c8;
+	width : 100%
+}
+
+header > .inner { /* > logo, sub-menu, main-menu */
+	height: 100px;
 }
 
 header .logo {
@@ -33,7 +39,7 @@ header .logo {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: 0;
+	left: 10px;
 	margin: auto;
 }
 
@@ -70,7 +76,7 @@ header .sub-menu ul.menu li:first-child::before{
 
 header .sub-menu ul.menu li a {
 	color: #656565;
-	font-size: 12px;
+	font-size: 13px;
 	padding: 11px 16px;
 	display: block;
 }
@@ -129,7 +135,7 @@ header .main-menu .item{
 }
 
 header .main-menu .item .item__name{
-	padding: 10px 20px 34px 20px;
+	padding: 10px 15px 15px 20px;
 	font-family: Arial, sans-serif;
 	font-size: 13px;
 }
@@ -141,5 +147,73 @@ header .main-menu .item:hover .item__name{
 }
 
 header .main-menu .item .item__contents{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	display: none;
+}
 
+header .main-menu .item:hover .item__contents{
+	display: block;
+}
+
+header .main-menu .item .item__contents .contents__menu{
+	background-color: #2C2A29;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul{
+	display: flex;
+	padding: 20px 0;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li {
+	width: 220px;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+	padding: 3px 0 12px 0;
+	font-size: 14px;
+	color: #fff;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li ul li {
+	padding: 5px 0;
+	font-size: 12px;
+	color: #999;
+	cursor: pointer;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover{
+	color: #669900;
+}
+
+header .main-menu .item .item__contents .contents__texture{
+	padding: 26px 0;
+	font-size: 12px;
+	background-image: url("../images/main_menu_pattern.jpg");
+}
+
+header .main-menu .item .item__contents .contents__texture h4{
+	color: #999;
+	font-weight: 700;
+}
+
+header .main-menu .item .item__contents .contents__texture p{
+	color : #699900;
+	margin : 4px 0 14px;
+}
+
+/* Badges */
+header .badges {
+	position: absolute;
+	top: 135px;
+	right: 12px;
+}
+
+header .badges .badge{
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 12px;
+	box-shadow: 4px 4px 10px rgba(0,0,0,.25);
+	cursor: pointer;
 }
