@@ -210,7 +210,7 @@ header .main-menu .item:hover .item__name{
 }
 
 header .main-menu .item .item__contents{
-	width: 100vw;
+	width: 100%;
 	position: fixed;
 	left: 0;
 	display: none;
@@ -379,12 +379,23 @@ header .badges .badge{
 	font-size: 17px;
 	font-weight: 700;
 	margin-right: 20px;
+
 }
 
-.notice .notice-line .inner__left .swiper-container{
- background-color: orange;
+.notice .notice-line .inner__left .swiper{
  height: 62px;
  flex-grow: 1;
+}
+.notice .notice-line .inner__left .swiper-slide{
+	height: 62px;
+	display: flex;
+	align-items: center;
+	/* justify-content: center; */
+}
+
+.notice .notice-line .inner__left .swiper-slide a{
+	font-size: 17px;
+	color: #fff;
 }
 
 .notice .notice-line .inner__left .notice-line__more{
