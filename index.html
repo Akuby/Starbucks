@@ -45,6 +45,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- Main js -->
+  <script defer src="./js/youtube.js"></script>
   <script defer src="./js/main.js"></script>
 </head>
 
@@ -53,11 +54,11 @@
   <!-- HEADER -->
   <header>
     <div class="inner">
-      <!--메인 메뉴-->
+      <!--로고-->
       <a href="/" class="logo">
         <img src="./images/starbucks_logo.png" alt="STARBUCKS_LOGO" />
       </a>
-
+      <!--서브 메뉴-->
       <div class="sub-menu">
         <ul class="menu">
           <li>
@@ -80,7 +81,7 @@
           </span>
         </div>
       </div>
-
+      <!-- 메인 메뉴 -->
       <ul class="main-menu">
         <li class="item">
           <div class="item__name">COFFEE</div>
@@ -381,9 +382,8 @@
       </ul>
 
     </div>
-
+    <!-- 배지 -->
     <div class="badges">
-      <!--우측 뱃지-->
       <div class="badge">
         <img src="./images/badge1.jpg" alt="Badge" />
       </div>
@@ -452,6 +452,7 @@
       </div>
     </div>
     <!--공지 사항 끝-->
+    <!-- 프로모션 영역 -->
     <div class="promotion">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -485,11 +486,33 @@
         <div class="material-icons">arrow_forward</div>
       </div>
     </div>
-
-
   </section>
-  <!-- NOTICE 끝 -->
 
+  <!-- REWARDS -->
+  <section class="rewards">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+    <div class="inner">
+      <div class="btn-group">
+        <div class="btn btn--reverse sign-up">회원가입</div>
+        <div class="btn sign-in">로그인</div>
+        <div class="btn gift">e-Gift 선물하기</div>
+      </div>
+
+    </div>
+  </section>
+  <!-- YOUTUBE VIDEO -->
+  <section class="youtube"> <!--영상 관련 전체 영역-->
+    <div class="youtube__area"> <!--영상이 출력되는 영역-->
+      <div id="player"></div>
+    </div>
+    <div class="youtube__cover"></div><!--영상 영역 위를 덮어줄 패턴-->
+    <div class="inner">
+      <img src="./images/floating1.png" alt="Icon" class="floating floating1" />
+      <img src="./images/floating2.png" alt="Icon" class="floating floating2" />
+      <img src="./images/floating3.png" alt="Icon" class="floating floating3" />
+    </div>
+  </section>
 </body>
 
 </html>
