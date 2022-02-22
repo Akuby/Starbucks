@@ -91,21 +91,21 @@ promotionToggleBtn.addEventListener('click', function () {
 
 //랜덤 함수 (소수점 2자리까지)
 function random(min, max) {
-  return parseFloat(Math.random() * (max - min) + min).toFixed(2))
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2))
 }
 
 
 //유튜브 영역 아이콘 플로팅
 function floatingObject(selector, delay, size) {
   //gsap.to(요소, 시간, 옵션);
-  gsap.to(selector, random(1.5, 2.5), {
-    y: size,
+  gsap.to(selector, 1, {
+    y: random(10,size),
     repeat: -1,
     yoyo: true,
     ease: Power1.easeInOut,
-    delay: random(0, delay)
+    delay: delay
   });
 }
-floatingObject('.floating1, 1, 15');
-floatingObject('.floating2, .5, 15');
-floatingObject('.floating3, 1.5, 20');
+floatingObject('.floating1', 1, 20);
+floatingObject('.floating2', .5, 15);
+floatingObject('.floating3', 1.5, 25);
