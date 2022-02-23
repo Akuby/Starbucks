@@ -109,3 +109,15 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 20);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 25);
+
+// 스크롤 시, 나타나는 메뉴 애니메이션 with ScrollMagic
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function(spyEl){
+  new ScrollMagic
+      .Scene({
+        triggerElement: spyEl, //보여짐 여부를 감시할 요소를 지정
+        triggerHook: .8, //
+      }) //.Scene이 모두 충족되면 뒤 메소드 실행
+      .setClassToggle(spyEl, 'show')
+      .addTo(new ScrollMagic.Controller());
+});
