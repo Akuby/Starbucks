@@ -19,6 +19,7 @@ searchInputEl.addEventListener('blur', function () {
 
 //우측 배지
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 window.addEventListener('scroll', _.throttle(function () { //throttle(함수, 시간)
   if (window.scrollY > 500) {
     //배지 숨기기
@@ -27,14 +28,30 @@ window.addEventListener('scroll', _.throttle(function () { //throttle(함수, �
       opacity: 0,
       display: 'none'
     });
+    // 버튼 보이기 (gsap은 css 선택자로 querySelecting 대체 가능)
+    gsap.to(toTopEl, .2,{
+      x: 0 //원래 위치
+    });
+
   } else {
     //배지 보이기
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
     });
+    // 버튼 숨기기 
+    gsap.to(toTopEl, .2,{
+      x: 100
+    });
   }
 }, 300));
+// _.throttle(함수, 시간)
+
+toTopEl.addEventListener('click',function(){
+  gsap.to(window, .7, {
+    scrollTo: 0
+  });
+})
 
 //음료 사진 차례대로 나타나기
 const fadeEls = document.querySelectorAll('.visual .fade-in');
@@ -71,6 +88,17 @@ new Swiper(".promotion .mySwiper", {
   navigation: {
     prevEl: '.promotion .swiper-prev',
     nextEl: '.promotion .swiper-next'
+  }
+});
+// 어워즈 스와이퍼
+new Swiper('.awards .mySwiper', {
+  autoplay : true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
   }
 });
 
@@ -121,3 +149,7 @@ spyEls.forEach(function(spyEl){
       .setClassToggle(spyEl, 'show')
       .addTo(new ScrollMagic.Controller());
 });
+
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
